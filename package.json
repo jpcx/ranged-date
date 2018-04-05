@@ -1,0 +1,41 @@
+{
+  "name": "ranged-date",
+  "version": "1.0.0",
+  "description": "Converts a given input to the number of milliseconds since the Unix epoch, provided that it can be parsed and recognized as seconds, milliseconds, or microseconds within a specified range in years.",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "rangedDate.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "date",
+    "time",
+    "ranged",
+    "parsed",
+    "unixtime",
+    "ms",
+    "milliseconds",
+    "seconds",
+    "minutes",
+    "hours",
+    "days",
+    "months",
+    "years"
+  ],
+  "author": "Justin Collier",
+  "repository": "github:jpcx/ranged-date",
+  "bugs": {
+    "url": "https://github.com/jpcx/ranged-date/issues",
+    "email": "jpcxme@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-plugin-jsdoc": "^3.5.0",
+    "eslint-plugin-node": "^6.0.1",
+    "jsdoc": "^3.5.5",
+    "jsdoc-to-markdown": "^4.0.1"
+  }
+}
