@@ -4,8 +4,6 @@ Converts a given input to the number of milliseconds since the Unix epoch, provi
 
 ## Getting Started
 
-Install the ranged-date module and require it.
-
 ### Prerequisites
 
 Node.JS version 6.0.0 or above.
@@ -42,9 +40,9 @@ console.log(rangedDate(time * 1000))        // converted ms
 console.log(rangedDate(time * 1000 * 1000)) // converted ms
 console.log(rangedDate(String(time)))       // converted ms
 console.log(rangedDate(past))               // false
-console.log(rangedDate(past, 2))            // converted ms one year prior
+console.log(rangedDate(past, 2))            // converted ms
 console.log(rangedDate(future))             // false
-console.log(rangedDate(future, null, 2))    // converted ms one year after
+console.log(rangedDate(future, null, 2))    // converted ms
 ```
 
 ## Documentation
