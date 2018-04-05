@@ -63,7 +63,7 @@ Please refer to the [docs](https://github.com/jpcx/ranged-date/blob/master/docs/
 
 Versioning using [SemVer](http://semver.org/). For available versions, see the [tags on this repository](https://github.com/jpcx/ranged-date/tags).
 
-## Authors
+## Author
 
 * **Justin Collier** - [jpcx](https://github.com/jpcx)
 
