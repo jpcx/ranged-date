@@ -1,6 +1,6 @@
 # ranged-date
 
-Converts a given input to the number of milliseconds since the Unix epoch, provided that it can be parsed and recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
+Converts a given string, number, or date to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
 
 Useful for parsing timestampted data from external APIs.
 

@@ -25,8 +25,8 @@ Returns true only if value falls within range.
 | Param | Type | Description |
 | --- | --- | --- |
 | t | <code>number</code> | Number being tested. |
-| l | <code>number</code> | Upper bound. |
-| u | <code>number</code> | Lower bound. |
+| l | <code>number</code> | Lower bound. |
+| u | <code>number</code> | Upper bound. |
 
 **Example**  
 ```js

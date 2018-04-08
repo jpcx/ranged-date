@@ -4,8 +4,8 @@
  * Returns true only if value falls within range.
  *
  * @param {number} t - Number being tested.
- * @param {number} l - Upper bound.
- * @param {number} u - Lower bound.
+ * @param {number} l - Lower bound.
+ * @param {number} u - Upper bound.
  * @example
  * //returns true
  * inRange(0, -1, 1)
@@ -67,7 +67,7 @@ const check = (t, l, u) => isFinite(t) && (
   bound(t, l, u) || bound(t * 1000, l, u) || bound(t / 1000, l, u)
 )
 /**
- * Converts a given input to the number of milliseconds since the Unix epoch, provided that it can be parsed and recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
+ * Converts a given string, number, or date to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
  *
  * @exports rangedDate
  * @param {(Date|number|string)} data - Data to attempt to match.
