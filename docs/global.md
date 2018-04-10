@@ -28,6 +28,8 @@ Returns true only if value falls within range.
 | l | <code>number</code> | Lower bound. |
 | u | <code>number</code> | Upper bound. |
 
+> Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 17](https://github.com/jpcx/ranged-date/blob/master/index.js#L17)
+
 **Example**  
 ```js
 //returns true
@@ -49,6 +51,8 @@ Returns the difference of a number and the current date in ms, in years from the
 | Param | Type | Description |
 | --- | --- | --- |
 | t | <code>number</code> | Number to subtract from. |
+
+> Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 30](https://github.com/jpcx/ranged-date/blob/master/index.js#L30)
 
 **Example**  
 ```js
@@ -73,6 +77,8 @@ Returns the given number only if it falls within a given range in years from the
 | l | <code>number</code> | Years before current date as lower bound. |
 | u | <code>number</code> | Years after current date as upper bound. |
 
+> Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 45](https://github.com/jpcx/ranged-date/blob/master/index.js#L45)
+
 **Example**  
 ```js
 //returns current time in ms
@@ -95,6 +101,8 @@ Returns time in ms if number itself, seconds equivalent, or microseconds equival
 | t | <code>number</code> | Number being tested. |
 | l | <code>number</code> | Years before current date as lower bound. |
 | u | <code>number</code> | Years after current date as upper bound. |
+
+> Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 66](https://github.com/jpcx/ranged-date/blob/master/index.js#L66)
 
 **Example**  
 ```js

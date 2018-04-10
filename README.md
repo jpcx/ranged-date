@@ -4,6 +4,8 @@ Converts a given string, number, or date to the number of milliseconds since the
 
 Useful for parsing timestampted data from external APIs.
 
+[![NPM](https://nodei.co/npm/ranged-date.png)](https://nodei.co/npm/ranged-date/)
+
 ## Getting Started
 
 ### Prerequisites
@@ -59,8 +61,11 @@ console.log(rangedDate(future, null, 2))    // converted time in ms
 | low | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years before current date as lower bound. |
 | up | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years after current date as upper bound. |
 
-Please refer to the [API docs](https://github.com/jpcx/ranged-date/blob/master/docs/API.md) for more detailed usage examples.
-Global functions are documented [here](https://github.com/jpcx/ranged-date/blob/master/docs/global.md).
+#### Source:
+* [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js)
+#### Documentation:
+* [API](https://github.com/jpcx/ranged-date/blob/master/docs/API.md)
+* [Global](https://github.com/jpcx/ranged-date/blob/master/docs/global.md).
 
 ## Versioning
 

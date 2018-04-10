@@ -10,6 +10,7 @@ Converts a given string, number, or date to the number of milliseconds since the
 | data | <code>Date &#124; number &#124; string</code> |  |  | Data to attempt to match. |
 | low | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years before current date as lower bound. |
 | up | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years after current date as upper bound. |
+> Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 69](https://github.com/jpcx/ranged-date/blob/master/index.js#L69)
 
 **Example**  
 ```js

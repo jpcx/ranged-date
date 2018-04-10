@@ -1,7 +1,7 @@
 'use strict'
 process.env.TZ = 'UTC'
 
-const rangedDate = require('./rangedDate.js')
+const rangedDate = require('./index.js')
 
 const ANSI_RED   = '\x1b[31m'
 const ANSI_GREEN = '\x1b[32m'

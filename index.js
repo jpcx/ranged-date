@@ -69,7 +69,7 @@ const check = (t, l, u) => isFinite(t) && (
 /**
  * Converts a given string, number, or date to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
  *
- * @exports rangedDate
+ * @module rangedDate
  * @param {(Date|number|string)} data - Data to attempt to match.
  * @param {number} [low=0.5] - Years before current date as lower bound.
  * @param {number} [up=0.5]  - Years after current date as upper bound.
@@ -112,8 +112,10 @@ const check = (t, l, u) => isFinite(t) && (
  * rangedDate(Date.now() + 100000000000, 0.1, 5)
  * @returns {(number|boolean)} Converted time in ms or false if outside range.
  */
-module.exports = (data, low = 0.5, up = 0.5) => {
+const rangedDate = (data, low = 0.5, up = 0.5) => {
   if (data instanceof Date) return data.valueOf()
   if (typeof data == 'number') return check(data, low, up)
   return check(Date.parse(data), low, up) || check(+data, low, up)
 }
+
+module.exports = rangedDate
