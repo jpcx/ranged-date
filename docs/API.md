@@ -1,13 +1,13 @@
 ## Module
 
 ### rangedDate ⇒ <code>number</code> \| <code>boolean</code>
-Converts a given string, number, or date to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
+Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
 
 **Returns**: <code>number</code> \| <code>boolean</code> - Converted time in ms or false if outside range.
 
 | Param | Type | Attributes | Default | Description |
 | --- | --- | --- | --- | --- |
-| data | <code>Date &#124; number &#124; string</code> |  |  | Data to attempt to match. |
+| data | <code>Date &#124; number &#124; string</code> |  |  | Data to attempt to recognize as valid date. |
 | low | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years before current date as lower bound. |
 | up | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years after current date as upper bound. |
 > Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 69](https://github.com/jpcx/ranged-date/blob/master/index.js#L69)
@@ -60,8 +60,8 @@ rangedDate(10)
 **Example**  
 ```js
 //returns 10
-const yrSince1970 = new Date().getUTCFullYear() - 1970
-rangedDate(10, yrSince1970 + 2)
+const yrSinceEpoch = new Date().getUTCFullYear() - 1970
+rangedDate(10, yrSinceEpoch + 2)
 ```
 **Example**  
 ```js

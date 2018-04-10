@@ -1,10 +1,12 @@
 # ranged-date
 
-Converts a given string, number, or date to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
-
-Useful for parsing timestampted data from external APIs.
-
 [![NPM](https://nodei.co/npm/ranged-date.png)](https://nodei.co/npm/ranged-date/)
+
+Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
+
+Useful for:
+* Parsing timestampted data from external APIs.
+* Integrating databases with mixed date formats.
 
 ## Getting Started
 
@@ -57,7 +59,7 @@ console.log(rangedDate(future, null, 2))    // converted time in ms
 
 | Param | Type | Attributes | Default | Description |
 | --- | --- | --- | --- | --- |
-| data | <code>Date &#124; number &#124; string</code> |  |  | Data to attempt to match. |
+| data | <code>Date &#124; number &#124; string</code> |  |  | Data to attempt to recognize as valid date. |
 | low | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years before current date as lower bound. |
 | up | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years after current date as upper bound. |
 
@@ -65,7 +67,7 @@ console.log(rangedDate(future, null, 2))    // converted time in ms
 * [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js)
 #### Documentation:
 * [API](https://github.com/jpcx/ranged-date/blob/master/docs/API.md)
-* [Global](https://github.com/jpcx/ranged-date/blob/master/docs/global.md).
+* [Global](https://github.com/jpcx/ranged-date/blob/master/docs/global.md)
 
 ## Versioning
 

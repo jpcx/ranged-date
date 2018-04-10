@@ -8,7 +8,7 @@ const ANSI_GREEN = '\x1b[32m'
 const ANSI_RESET = '\x1b[0m'
 
 const now = ~~(Date.now() / 1000) * 1000
-const yrSince1970 = new Date(now).getUTCFullYear() - 1970
+const yrSinceEpoch = new Date(now).getUTCFullYear() - 1970
 
 console.log(`Using ${now} as argument for current date in ms.`)
 console.log('Using ' + process.env.TZ + ' as current timezone.')
@@ -63,9 +63,9 @@ tests.push({
   results: rangedDate(10)
 })
 tests.push({
-  operate: 'rangedDate(10, ' + (yrSince1970 + 2) + ')',
+  operate: 'rangedDate(10, ' + (yrSinceEpoch + 2) + ')',
   expects: 10,
-  results: rangedDate(10, yrSince1970 + 2)
+  results: rangedDate(10, yrSinceEpoch + 2)
 })
 tests.push({
   operate: 'rangedDate(now + 100000000000)',

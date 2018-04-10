@@ -67,10 +67,10 @@ const check = (t, l, u) => isFinite(t) && (
   bound(t, l, u) || bound(t * 1000, l, u) || bound(t / 1000, l, u)
 )
 /**
- * Converts a given string, number, or date to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
+ * Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as seconds, milliseconds, or microseconds within a specified range in years from the current date.
  *
  * @module rangedDate
- * @param {(Date|number|string)} data - Data to attempt to match.
+ * @param {(Date|number|string)} data - Data to attempt to recognize as valid date.
  * @param {number} [low=0.5] - Years before current date as lower bound.
  * @param {number} [up=0.5]  - Years after current date as upper bound.
  * @example
@@ -102,8 +102,8 @@ const check = (t, l, u) => isFinite(t) && (
  * rangedDate(10)
  * @example
  * //returns 10
- * const yrSince1970 = new Date().getUTCFullYear() - 1970
- * rangedDate(10, yrSince1970 + 2)
+ * const yrSinceEpoch = new Date().getUTCFullYear() - 1970
+ * rangedDate(10, yrSinceEpoch + 2)
  * @example
  * //returns false
  * rangedDate(Date.now() + 100000000000)
