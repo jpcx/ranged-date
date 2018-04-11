@@ -186,7 +186,7 @@ const check = (target, back, fwd, exclude) => isFinite(target) && (
  */
 const rangedDate = (data, back = 0.5, fwd = 0.5, exclude = {}) => {
   if (data instanceof Date) return data.valueOf()
-  if (typeof data == 'number') return check(data, back, fwd, exclude)
+  if (typeof data === 'number') return check(data, back, fwd, exclude)
   return (
     check(Date.parse(data), back, fwd, exclude)
     || check(+data, back, fwd, exclude)
