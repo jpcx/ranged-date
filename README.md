@@ -27,9 +27,10 @@ npm i ranged-date
 
 ### Testing
 
-The following command will test the package for errors.
+The following commands will test the package for errors.
 
 ```
+cd /path/to/node_modules/ranged-date
 npm test
 ```
 
