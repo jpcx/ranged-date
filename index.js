@@ -51,7 +51,7 @@ const bound = (target, back, fwd) => (
  * @param   {number} target - Number being tested.
  * @param   {number} back   - Years before current date as lower bound.
  * @param   {number} fwd    - Years after current date as upper bound.
- * @param   {rangedDate~exclude} exclude - Specifies exclusions, if any.
+ * @param   {rangedDate~exclude} exclude - Specifies range exclusions, if any.
  * @returns {(number|boolean)} Converted ms or false if outside range.
  * @example
  * // returns current time in ms
@@ -97,7 +97,7 @@ const check = (target, back, fwd, exclude) => isFinite(target) && (
 )
 
 /**
- * Exclude milliseconds, seconds, or microseconds as possibilities for type matching.
+ * Exclude milliseconds, seconds, or microseconds as possibilities for range matching.
  *
  * @typedef  {rangedDate~exclude}
  * @type     {Object}
@@ -107,13 +107,13 @@ const check = (target, back, fwd, exclude) => isFinite(target) && (
  */
 
 /**
- * Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified time range from the current date.
+ * Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.
  *
  * @module rangedDate
  * @param {(Date|number|string)} data - Data to attempt to recognize as valid date.
  * @param   {number}  [back=0.5] - Years before current date as lower bound.
  * @param   {number}  [fwd=0.5]  - Years after current date as upper bound.
- * @param   {rangedDate~exclude} [exclude={}] - Specifies type exclusions, if any.
+ * @param   {rangedDate~exclude} [exclude={}] - Specifies range exclusions, if any.
  * @returns {(number|boolean)} Converted time in ms or false if outside range.
  * @example
  * // returns current time in ms

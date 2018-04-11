@@ -30,13 +30,11 @@ Returns true only if value falls within range.
 
 **Returns**: <code>boolean</code> - True if number falls within range, false if not.  
 
-**Example**  
+**Examples**  
 ```js
 // returns true
 inRange(0, -1, 1)
-```
-**Example**  
-```js
+
 // returns false
 inRange(-1, 0, 1)
 ```
@@ -54,13 +52,11 @@ Returns the difference of a number and the current date in ms as years from the 
 
 **Returns**: <code>number</code> - Years until given time in ms.  
 
-**Example**  
+**Examples**  
 ```js
 // returns years until unix epoch
 yrDist(0)
-```
-**Example**  
-```js
+
 // returns 1
 yrDist(Date.now() + 31536000000)
 ```
@@ -80,13 +76,11 @@ Returns the given number only if it falls within a given range in years from the
 
 **Returns**: <code>number</code> \| <code>boolean</code> - Number falls within range.  
 
-**Example**  
+**Examples**  
 ```js
 // returns current time in ms
 bound(Date.now(), 0.5, 0.5)
-```
-**Example**  
-```js
+
 // returns false
 bound(Date.now() * 1000, 0.5, 0.5)
 ```
@@ -101,69 +95,47 @@ Returns time in ms if number itself, seconds equivalent, or microseconds equival
 | target | <code>number</code> | Number being tested. |
 | back | <code>number</code> | Years before current date as lower bound. |
 | fwd | <code>number</code> | Years after current date as upper bound. |
-| exclude | <code><a href="https://github.com/jpcx/ranged-date/blob/master/docs/API.md#rangedDate~exclude">rangedDate~exclude</a></code> | Specifies type exclusions, if any. |
+| exclude | <code><a href="https://github.com/jpcx/ranged-date/blob/master/docs/API.md#rangedDate~exclude">rangedDate~exclude</a></code> | Specifies range exclusions, if any. |
 
 > Source: [index.js](https://github.com/jpcx/ranged-date/blob/master/index.js), [line 93](https://github.com/jpcx/ranged-date/blob/master/index.js#L93)
 
 **Returns**: <code>number</code> \| <code>boolean</code> - Converted ms or false if outside range.  
 
-**Example**  
+**Examples**  
 ```js
 // returns current time in ms
 check(Date.now(), 0.5, 0.5, {})
-```
-**Example**  
-```js
+
 // returns current time in ms
 check(Date.now() / 1000, 0.5, 0.5, {})
-```
-**Example**  
-```js
+
 // returns current time in ms
 check(Date.now() * 1000, 0.5, 0.5, {})
-```
-**Example**  
-```js
+
 // returns false
 check(Date.now() - 100000000000, 0.5, 0.5, {})
-```
-**Example**  
-```js
+
 // returns current time in ms - 100000000000
 check(Date.now() - 100000000000, 5, 0.5, {})
-```
-**Example**  
-```js
+
 // returns false
 check(Date.now(), 0.5, 0.5, { ms: true })
-```
-**Example**  
-```js
+
 // returns current time in ms
 check(Date.now(), 0.5, 0.5, { s: true, us: true })
-```
-**Example**  
-```js
+
 // returns false
 check(Date.now() / 1000, 0.5, 0.5, { s: true })
-```
-**Example**  
-```js
+
 // returns current time in ms
 check(Date.now() / 1000, 0.5, 0.5, { ms: true, us: true })
-```
-**Example**  
-```js
+
 // returns false
 check(Date.now() * 1000, 0.5, 0.5, { us: true })
-```
-**Example**  
-```js
+
 // returns current time in ms
 check(Date.now() * 1000, 0.5, 0.5, { ms: true, s: true })
-```
-**Example**  
-```js
+
 // returns false
 check(Date.now(), 0.5, 0.5, { ms: true, s: true , us: true })
 ```

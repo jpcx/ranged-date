@@ -2,16 +2,16 @@
 
 [![NPM](https://nodei.co/npm/ranged-date.png)](https://nodei.co/npm/ranged-date/)
 
-Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified time range from the current date.
+Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.
 
-Milliseconds, seconds, or microseconds may be excluded as possibilities for type matching.
+Milliseconds, seconds, or microseconds may be excluded as possibilities for range matching.
 
 Useful for:
 * Parsing timestampted data from external APIs.
 * Integrating collections containing mixed timestamp formats.
 
 **Warning:**
-* *Although it is unlikely for a given number to fall within the default range (one year), it is advisable to both restrict the range and use type exclusions wherever possible, in order to avoid incorrectly classifying and converting values that were not intended to be timestamps.*
+* *Although it is unlikely for a given number to fall within the default range (one year), it is advisable to both restrict the range and use exclusions wherever possible, in order to avoid incorrectly classifying and converting values that were not intended to be timestamps.*
 
 ## Getting Started
 
@@ -73,12 +73,12 @@ console.log(
 | data | <code>Date</code> \| <code>number</code> \| <code>string</code> |  |  | Data to attempt to recognize as valid date. |
 | back | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years before current date as lower bound. |
 | fwd | <code>number</code> | <code>&#60;optional&#62;</code> | <code>0.5</code> | Years after current date as upper bound. |
-| exclude | <code><a href="#rangedDate~exclude">rangedDate~exclude</a></code> | <code>&#60;optional&#62;</code> | <code>{}</code> | Specifies type exclusions, if any. |
+| exclude | <code><a href="#rangedDate~exclude">rangedDate~exclude</a></code> | <code>&#60;optional&#62;</code> | <code>{}</code> | Specifies range exclusions, if any. |
 
 **Returns**: <code>number</code> \| <code>boolean</code> - Converted ms or false if outside range.  
 
 ### <a name="rangedDate~exclude"></a> <code>rangedDate~exclude</code>
-Settings for exclusion of milliseconds, seconds, or microseconds as possibilities for type matching.
+Settings for exclusion of milliseconds, seconds, or microseconds as possibilities for range matching.
 
 **Properties**
 
