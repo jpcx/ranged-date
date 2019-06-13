@@ -1,6 +1,6 @@
 {
   "name": "ranged-date",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.",
   "engines": {
     "node": ">=6.0.0"
@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-	"prepare": "npm test && documentation readme index.js -s Documentation -a public --github",
-	"postinstall": "node -e \"console.log('Breaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>')\""
+    "prepare": "npm test && documentation readme index.js -s Documentation -a public --github",
+    "postinstall": "node -e \"console.log('Breaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>')\""
   },
   "keywords": [
     "date",
