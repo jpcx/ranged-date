@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-	"prepare": "npm test && documentation readme index.js -s Documentation -a public --github",
-	"postinstall": "node -e \"console.log('Breaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>')\""
+    "prepare": "npm test && documentation readme index.js -s Documentation -a public --github",
+    "postinstall": "node -e \"console.log('Breaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>')\""
   },
   "keywords": [
     "date",
