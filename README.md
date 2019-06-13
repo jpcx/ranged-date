@@ -45,7 +45,7 @@ The following commands will test the package for errors.
 
 ### ranged-date
 
-[index.js:142-167](https://github.com/jpcx/ranged-date/blob/456443786f6e5dcde48e977f38365f12b53f2d02/index.js#L142-L167 "Source code on GitHub")
+[index.js:142-167](https://github.com/jpcx/ranged-date/blob/2.0.1/index.js#L142-L167 "Source code on GitHub")
 
 Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.
 
