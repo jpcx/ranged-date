@@ -45,7 +45,7 @@ The following commands will test the package for errors.
 
 ### ranged-date
 
-[index.js:142-167](https://github.com/jpcx/ranged-date/blob/2.0.1/index.js#L142-L167 "Source code on GitHub")
+[index.js:142-167](https://github.com/jpcx/ranged-date/blob/2.0.2/index.js#L142-L167 "Source code on GitHub")
 
 Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.
 
@@ -96,4 +96,4 @@ Versioning using [SemVer](http://semver.org/). For available versions, see the [
 
 ## License
 
-This project is licensed under the ISC License - see the [LICENSE.md](https://github.com/jpcx/ranged-date/blob/master/LICENSE.md) file for details
+This project is licensed under the ISC License - see the [LICENSE.md](https://github.com/jpcx/ranged-date/blob/2.0.1/LICENSE.md) file for details
