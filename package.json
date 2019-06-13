@@ -1,6 +1,6 @@
 {
   "name": "ranged-date",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.",
   "engines": {
     "node": ">=6.0.0"
