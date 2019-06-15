@@ -1,5 +1,14 @@
 'use strict'
 
+/**
+ * Value certification module. Certifies that parameters passed to ranged-date
+ * are of expected types and ranges.
+ *
+ * @private
+ * @module cert-is
+ * @external
+ * @see {@link https://github.com/jpcx/cert-is}
+ */
 const cert = require('cert-is')
 
 /**
@@ -17,7 +26,7 @@ const cert = require('cert-is')
  * // returns false
  * inRange(-1, 0, 1)
  */
-const inRange = (t, l, u) => cert(t, l, u).isType('number') && t > l && t < u
+const inRange = (t, l, u) => t > l && t < u
 /**
  * Returns the difference of a number and the current date in ms as years from the current date.
  *
@@ -31,8 +40,7 @@ const inRange = (t, l, u) => cert(t, l, u).isType('number') && t > l && t < u
  * // returns 1
  * yrDist(Date.now() + 31536000000)
  */
-const yrDist = target =>
-  cert(target).isType('number') && (target - Date.now()) / +'31536e6'
+const yrDist = target => (target - Date.now()) / +'31536e6'
 /**
  * Returns the given number only if it falls within a given range in years from the current date.
  *
@@ -49,18 +57,19 @@ const yrDist = target =>
  * bound(Date.now() * 1000, 5, 5)
  */
 const bound = (target, yrBack, yrFwd) =>
-  cert(target, yrBack, yrFwd).isType('number') &&
-  inRange(yrDist(target), -yrBack, yrFwd) &&
-  target
+  inRange(yrDist(target), -yrBack, yrFwd) && target
 /**
  * Returns time in ms if number itself, seconds equivalent, or microseconds equivalent falls within a given range in years from the current date.
  *
  * @private
- * @param   {number} target - Number being tested.
- * @param   {number} yrBack   - Years before current date as lower bound.
- * @param   {number} yrFwd    - Years after current date as upper bound.
- * @param   {ranged-date~exclude} exclude - Specifies range exclusions, if any.
- * @returns {(number|boolean)} Converted ms or false if outside range.
+ * @param   {number}  target     - Number being tested.
+ * @param   {number}  yrBack     - Years before current date as lower bound.
+ * @param   {number}  yrFwd      - Years after current date as upper bound.
+ * @param   {Object}  exclusions - Specifies interpretation exclusions, if any.
+ * @param   {boolean} [exclusions.us=false] - Exclude microseconds interpretation.
+ * @param   {boolean} [exclusions.ms=false] - Exclude milliseconds interpretation.
+ * @param   {boolean} [exclusions.s=false]  - Exclude seconds interpretation.
+ * @returns {(number|boolean)}  Converted ms or false if outside range.
  * @example
  * // returns current time in ms
  * check(Date.now(), 5, 5, {})
@@ -99,7 +108,6 @@ const bound = (target, yrBack, yrFwd) =>
  * check(Date.now(), 5, 5, { ms: true, s: true , us: true })
  */
 const check = (target, yrBack, yrFwd, exclusions) =>
-  cert(target, yrBack, yrFwd).isType('number') &&
   isFinite(target) &&
   ((!exclusions.ms && bound(target, yrBack, yrFwd)) ||
     (!exclusions.s && bound(target * 1000, yrBack, yrFwd)) ||
@@ -114,11 +122,11 @@ const check = (target, yrBack, yrFwd, exclusions) =>
  * @param   {number}  yrBack     - Years before current date as lower bound.
  * @param   {number}  yrFwd      - Years after current date as upper bound.
  * @param   {Object}  exclusions - Specifies interpretation exclusions, if any.
- * @param   {boolean} exclusions.us - Exclude microseconds interpretation.
- * @param   {boolean} exclusions.ms - Exclude milliseconds interpretation.
- * @param   {boolean} exclusions.s  - Exclude seconds interpretation.
+ * @param   {boolean} [exclusions.us=false] - Exclude microseconds interpretation.
+ * @param   {boolean} [exclusions.ms=false] - Exclude milliseconds interpretation.
+ * @param   {boolean} [exclusions.s=false]  - Exclude seconds interpretation.
  * @returns {(number|boolean)} Converted time in ms or false if outside range.
- * @throws  {(cert-is.TypeAssertionError|cert-is.RangeAssertionError)} Throws an assertion error if parameter requirements are not met.
+ * @throws  {(module:cert-is.TypeAssertionError|module:cert-is.RangeAssertionError)} Throws an assertion error if parameter requirements are not met.
  * @example
  * // All return current time in ms
  * rangedDate(new Date(), 1, 1)
@@ -152,6 +160,9 @@ module.exports = (
     .message('ranged-date year boundaries must be specified with numbers > 0')
     .isType('number')
     .isGT(0)
+  cert(exclusions)
+    .message('ranged-date exclusions must be specified with an object')
+    .isType(Object)
   cert(exclusions.s, exclusions.ms, exclusions.us)
     .message('ranged-date exclusions must be booleans')
     .isType('boolean', 'undefined')
@@ -165,3 +176,19 @@ module.exports = (
     check(+data, yrBack, yrFwd, exclusions)
   )
 }
+
+/**
+ * Thrown by {@link https://github.com/jpcx/cert-is cert-is} in response to a type assertion error.
+ *
+ * @public
+ * @typedef {Error} module:cert-is.TypeAssertionError
+ * @external
+ */
+
+/**
+ * Thrown by {@link https://github.com/jpcx/cert-is cert-is} in response to a range assertion error.
+ *
+ * @public
+ * @typedef {Error} module:cert-is.RangeAssertionError
+ * @external
+ */

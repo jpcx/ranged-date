@@ -1,5 +1,20 @@
 # Changelog
 
+## <a name="2.1.0"></a> [2.1.0](https://github.com/jpcx/ranged-date/tree/2.1.0) (2019-06-15)
+
+| __[Changes since 2.0.2](https://github.com/jpcx/ranged-date/compare/2.0.2...2.1.0)__ | [Release Notes](https://github.com/jpcx/ranged-date/releases/tag/2.1.0) | [README](https://github.com/jpcx/ranged-date/tree/2.1.0/README.md) |
+| --- | --- | --- |
+
+| [Source Code (zip)](https://github.com/jpcx/ranged-date/archive/2.1.0.zip) | [Source Code (tar.gz)](https://github.com/jpcx/ranged-date/archive/2.1.0.tar.gz) |
+| --- | --- |
+
+__Features:__
+
++ __docs:__ Added documentation for cert-is errors.
++ __npm:__  Added documentationjs fix script.
+            Added dependency update script.
+            Made postinstall migration warning more visible.
+
 ## <a name="2.0.2"></a> [2.0.2](https://github.com/jpcx/ranged-date/tree/2.0.2) (2019-06-13)
 
 | __[Changes since 2.0.1](https://github.com/jpcx/ranged-date/compare/2.0.1...2.0.2)__ | [Release Notes](https://github.com/jpcx/ranged-date/releases/tag/2.0.2) | [README](https://github.com/jpcx/ranged-date/tree/2.0.2/README.md) |
