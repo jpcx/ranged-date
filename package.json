@@ -1,6 +1,6 @@
 {
   "name": "ranged-date",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Converts a given string, number, or Date object to the number of milliseconds since the Unix epoch, provided that it can be recognized as millisecond, second, or microsecond time within a specified range from the current date.",
   "engines": {
     "node": ">=6.0.0"
@@ -8,8 +8,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-	"prepare": "npm test && documentation readme index.js -s Documentation -a public --github && npm run-script fixReadme",
-	"fixReadme": "node -e \"const ver = require('./package.json').version; const fs = require('fs'); const readme = fs.readFileSync('./README.md', 'utf8'); fs.writeFileSync('./README.md', readme.replace(/\\/blob\\/[0-9a-z]+?\\//g, '/blob/' + ver + '/'), 'utf8')\"",
+    "update": "rm -rf node_modules && rm package-lock.json && ncu -u && npm i -d && npx npm-force-resolutions && rm -rf node_modules && npm i -d",
+    "prepack": "npm run-script update && npm run-script write-public-api-docs && npm test",
+    "write-public-api-docs": "documentation readme index.js -s API -a public --github && node scripts/postDocJS.js",
     "postinstall": "node -e \"console.log('Breaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>')\""
   },
   "keywords": [
@@ -38,9 +39,10 @@
   "devDependencies": {
     "mocha": "^6.1.4",
     "standard": "^12.0.1",
-    "documentation": "^11.0.1"
+    "documentation": "^11.0.1",
+    "npm-force-resolutions": "0.0.2"
   },
   "dependencies": {
-    "cert-is": "^0.3.0"
+    "cert-is": "^0.3.2"
   }
 }
