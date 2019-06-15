@@ -11,7 +11,7 @@
     "update": "rm -rf node_modules && rm package-lock.json && ncu -u && npm i -d && npx npm-force-resolutions && rm -rf node_modules && npm i -d",
     "prepack": "npm run-script update && npm run-script write-public-api-docs && npm test",
     "write-public-api-docs": "documentation readme index.js -s API -a public --github && node scripts/postDocJS.js",
-    "postinstall": "node -e \"console.log('Breaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>')\""
+    "postinstall": "node -e \"console.log('\\n\\n\\x1b[1m\\x1b[33mranged-date:\\n------------\\nBreaking changes introduced from 1.x.x to 2.x.x. Please see the readme at <https://github.com/jpcx/ranged-date/tree/2.0.0/README.md>\\n\\x1b[0m')\""
   },
   "keywords": [
     "date",
@@ -44,5 +44,9 @@
   },
   "dependencies": {
     "cert-is": "^0.3.2"
+  },
+  "resolutions": {
+    "js-yaml": "^3.13.1",
+    "diff": "^3.5.0"
   }
 }

@@ -13,6 +13,7 @@ __Features:__
 + __docs:__ Added documentation for cert-is errors.
 + __npm:__  Added documentationjs fix script.
             Added dependency update script.
+            Made postinstall migration warning more visible.
 
 ## <a name="2.0.2"></a> [2.0.2](https://github.com/jpcx/ranged-date/tree/2.0.2) (2019-06-13)
 
